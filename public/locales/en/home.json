@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "title": "Discover the NFT for worldwide creators.",
+    "subtitle": "Buy and sell NFTs from the world’s top artists",
+    "becomeACreator": "Become a creator",
+    "explore": "Explore NFT"
+  },
+  "topCreator": {
+    "title": "Top Creator",
+    "description": "Buy and sell NFTs from the world's top creators instantly and securely."
+  },
+  "liveArtBidding": {
+    "title": "Live ART Bidding",
+    "description": "Bid for and win the world's most sought-after digital artworks."
+  },
+  "exploreNftArt": {
+    "title": "Explore NFT Art",
+    "description": "Buy and sell NFTs from the world’s top artistsBuy and sell NFTs from",
+    "categories": {
+      "music": "Music",
+      "3d": "3D",
+      "photography": "Photography",
+      "digitalArt": "Digital Art",
+      "painting": "Painting"
+    }
+  },
+  "popularCollections": {
+    "title": "Popular Collections"
+  },
+  "createSellNfts": {
+    "title": "Create your NFTs & Sell",
+    "description": "Join the world's largest and fastest-growing NFT marketplace.",
+    "action": "Create your item"
+  },
+  "topCollectionsIn1Day": {
+    "title": "Top Collections in 1 Day"
+  },
+  "recommendedArt": {
+    "title": "Recommended Art",
+    "description": "Buy and sell NFTs from the world’s top artistsBuy and sell NFTs from"
+  },
+  "createAndSellGuide": {
+    "title": "Create and Sell Your NFTs",
+    "description": "Buy and sell NFTs from the world’s top artists",
+    "setupWallet": {
+      "title": "Set Up your Wallet",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has Ipsum."
+    },
+    "createCollection": {
+      "title": "Create Your Collection",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has Ipsum."
+    },
+    "addNFT": {
+      "title": "Add Your NFT",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has Ipsum."
+    },
+    "saleNFT": {
+      "title": "List Them for Sale",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has Ipsum."
+    }
+  }
+}

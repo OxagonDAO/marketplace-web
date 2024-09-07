@@ -1,0 +1,51 @@
+{
+  "header": {
+    "home": "Home",
+    "marketplace": "Marketplace",
+    "community": "Community",
+    "activity": "Activity",
+    "blog": "Blog",
+    "search": "Search",
+    "signIn": "Sign in",
+    "connectWallet": "Connect wallet"
+  },
+  "footer": {
+      "community": {
+        "title": "Join our community",
+        "description": "Meet the Known Origin team, artists and collectors for platform updates, announcements, and more...",
+        "subscribe": "Subscribe"
+      },
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "support": {
+        "title": "Support",
+        "community": "Community",
+        "guideline": "Guideline",
+        "chatWithUs": "Chat with us"
+      },
+      "company": {
+        "title": "Company",
+        "about": "About",
+        "faq": "FAQ",
+        "marketplace": "Marketplace",
+        "blog": "Blog"
+      },
+      "explore": {
+        "title": "Explore",
+        "art": "Art",
+        "collection": "Collection",
+        "creator": "Creator / Owner",
+        "contactUs": "Contact Us"
+      },
+      "legal": {
+        "description": "©2022 <0>Larcible</0>. All Right reserved",
+        "privacyPolicy": "Privacy Policy",
+        "termsOfService": "Terms of Service"
+      }
+    },
+    "label": {
+      "creator": "Creator",
+      "currentBid": "Current bid",
+      "sign-in": "Sign in",
+      "sign-up": "Sign up"
+    }
+}
