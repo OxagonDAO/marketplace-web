@@ -1,0 +1,42 @@
+{
+  "create": {
+    "title": "Create your item",
+    "description": "Rankings by sales volume",
+    "uploadSection": {
+      "uploadTitle": "Upload file",
+      "uploadSubtitle": "Select a file or drag and drop here",
+      "uploadSupportedFormats": "JPG, PNG or PDF file, file size no more than 10MB",
+      "uploadButton": "Upload file"
+    },
+    "methodSection": {
+      "methodTitle": "Select method",
+      "methods": {
+        "fixedPrice": "Fixed Price",
+        "timeAuction": "Time Auction",
+        "openForBid": "Open for Bid"
+      }
+    },
+    "formSection": {
+      "labels": {
+        "title": "Title",
+        "startingDate": "Starting Date",
+        "endingDate": "Ending Date",
+        "description": "Description",
+        "descriptionPlaceholder": "e.g. This is a very limited item?",
+        "minimumBid": "Minimum Bid",
+        "royalties": "Royalties",
+        "chooseCollection": "Choose Collection"
+      },
+      "collectionPlaceholder": "Select collection"
+    },
+    "button": "Create item",
+    "itemPreview": {
+      "title": "A Brush with Arts",
+      "creator": "Creator",
+      "creatorName": "Damian ThomA",
+      "currentBidLabel": "Current Bid",
+      "currentBidValue": "0.0091 ETH",
+      "usdEquivalent": "$650.00"
+    }
+  }
+}

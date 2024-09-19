@@ -6,7 +6,15 @@ const localApi = createApi({
     baseUrl,
   }),
   reducerPath: 'local-api',
-  endpoints: () => ({}),
+  endpoints: (builder) => ({
+    uploadFiles: builder.mutation<string, FormData>({
+      query: (body) => ({
+        url: "/files",
+        method: "POST",
+        body
+      })
+    })
+  }),
 });
 
 export { localApi };

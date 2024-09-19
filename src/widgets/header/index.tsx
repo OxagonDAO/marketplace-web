@@ -5,9 +5,14 @@ import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from '@nextui-org/navb
 import { useTranslation } from 'react-i18next';
 import { NavLinks } from './nav-links';
 import { TbSearch } from "react-icons/tb";
+import { WalletInfo } from '@/features/wallet-provider';
+import { useWallet } from '@/features/wallet/model';
 
 export const Header: React.FC = () => {
   const { t } = useTranslation("common", { keyPrefix: "header"})
+  const { wallet: { connected } } = useWallet()
+
+  const info = <WalletInfo />
 
   return (
     <Navbar classNames={{
@@ -27,17 +32,28 @@ export const Header: React.FC = () => {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
+        {/* <NavbarItem className="hidden lg:flex">
           <Link href="/auth/sign-in">
             {t("signIn")}
           </Link>
-        </NavbarItem>
+        </NavbarItem> */}
         <NavbarItem>
+          {connected ? (
+            <div className='flex gap-4'>
+              <Link href="/nft/create">
+                <Button size='lg' as={Link} color="primary" href="#" /* variant="flat" */>
+                  {t("create")}
+                </Button>
+              </Link>
+              {info}
+            </div>
+          ) : (
           <Link href="/connect-wallet">
             <Button size='lg' as={Link} color="primary" href="#" /* variant="flat" */>
               {t("connectWallet")}
             </Button>
           </Link>
+          )}
         </NavbarItem>
       </NavbarContent>
 

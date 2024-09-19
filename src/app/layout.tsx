@@ -1,7 +1,7 @@
 import { NextUIProvider } from "@nextui-org/system";
+import { ReduxProvider } from "@/redux/provider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ReduxProvider } from "@/redux/provider";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ReduxProvider>
           <NextUIProvider>
-            <main>{children}</main>
+            {children}
           </NextUIProvider>
         </ReduxProvider>
       </body>

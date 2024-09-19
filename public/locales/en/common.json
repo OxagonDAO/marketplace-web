@@ -7,7 +7,8 @@
     "blog": "Blog",
     "search": "Search",
     "signIn": "Sign in",
-    "connectWallet": "Connect wallet"
+    "connectWallet": "Connect wallet",
+    "create": "Create"
   },
   "footer": {
       "community": {

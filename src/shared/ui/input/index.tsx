@@ -6,7 +6,7 @@ import { Label } from "../typography";
 
 const styles: InputProps["classNames"] = {
   base: [
-    "data-[has-label=true]:mt-0"
+    "data-[has-label=true]:mt-0 "
   ],
   label: [
     "!text-sm !text-gray-600 dark:text-white/90 group-focus-within:!text-black",
@@ -30,11 +30,13 @@ const styles: InputProps["classNames"] = {
   ],
   inputWrapper: [
     /* border */
-    "border border-gray-400 group-focus-within:border-black",
+    "border border-black-out-200 group-focus-within:border-black",
     /* round */
     "rounded-md bg",
     /* height */,
     "h-12",
+    /* Background */
+    "!bg-transparent",
     /* "dark:bg-default/60",
     "backdrop-blur-xl",
     "backdrop-saturate-200",
