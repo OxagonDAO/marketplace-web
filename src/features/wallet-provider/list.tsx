@@ -2,9 +2,9 @@ import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Metamask } from './metamask'
 
-type Props = {
+type Props = {/* 
   onSuccess: () => void,
-  onError: () => void
+  onError: () => void */
 }
 
 export const WalletProviderList: FC<Props> = (props) => {

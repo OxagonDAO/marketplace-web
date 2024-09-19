@@ -18,7 +18,7 @@ const Page = () => {
         title={t("title")}
         description={t("description")}
       />
-        <WalletProviderList onError={setError} onSuccess={setSuccess} />
+        <WalletProviderList />
         <WalletProviderConnectedModal open={false} />
     </Section>
   );

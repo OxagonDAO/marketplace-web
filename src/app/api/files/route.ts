@@ -2,11 +2,11 @@ import { pinata } from "@/shared/utils";
 import { NextResponse, NextRequest } from "next/server";
 
 
-export const config = {
+/* export const config = {
   api: {
     bodyParser: false,
   },
-};
+}; */
 
 export async function POST(request: NextRequest) {
   try {
