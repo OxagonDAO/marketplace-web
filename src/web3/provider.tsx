@@ -10,7 +10,6 @@ export const Web3Provider: FC<PropsWithChildren> = ({ children }) => {
   return (
     <Web3ReactProvider 
       connectors={Object.values(CONNECTORS).map(({ connector, hooks }) => [connector, hooks])} 
-
     >
       {children}
     </Web3ReactProvider>
