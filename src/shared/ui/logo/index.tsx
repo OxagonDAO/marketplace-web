@@ -8,7 +8,7 @@ type Props = {
 export const Logo: FC<Props> = ({ type = "dark"}) => {
   return (
     <div>
-      <strong className={clsx('text-lg', type === "dark" ? "text-black-out" : "text-white")}>PumpMint</strong>
+      <strong className={clsx('text-2xl', type === "dark" ? "text-black-out" : "text-white")}>PumpMint</strong>
     </div>
   )
 }
