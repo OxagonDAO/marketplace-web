@@ -1,5 +1,3 @@
-"use client"
-
 import { Button, Input, Select } from "@/shared/ui";
 import { Textarea } from "@nextui-org/input";
 import { SelectItem } from "@nextui-org/select";
@@ -8,11 +6,6 @@ import { TbPlus } from "react-icons/tb";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form"
 import { localApi } from "@/shared/api";
-import { useWallet } from "@/features/wallet";
-import { getNfts } from "@/shared/utils";
-import { useSession } from "next-auth/react";
-import { useEvmWalletNFTs } from "@moralisweb3/next";
-import { EvmChain } from "moralis/common-evm-utils";
 
 type Form = {
   file: FileList,
@@ -28,18 +21,6 @@ export const NFTCreateForm: React.FC = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<Form>()
   const [collections, setCollections] = useState([])
   const [upload, uploadResult] = localApi.useUploadFilesMutation()
-  const { data } = useSession()
-
-  useEffect(() => {
-    /* moralis.EvmApi.nft.getWalletNFTs({
-      address: String(data?.user.address),
-      chain: EvmChain.POLYGON
-    }).then(console.log) */
-    /* if(data?.user.address ) getNfts(data.user.address, EvmChain.POLYGON.apiHex).then(console.log)
-    console.log(EvmChain.POLYGON) */
-
-
-  }, [])
 
   /* const getCollections = async () => {
     console.log(sdk)

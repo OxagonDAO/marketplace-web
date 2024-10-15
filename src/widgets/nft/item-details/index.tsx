@@ -2,7 +2,7 @@
 
 import { nftApi, nftMock } from '@/entities/nft'
 import { NFTPreview } from '@/entities/nft/api/types'
-import { NFTUserInfo, NFTFilters, NFTGridList, NFTPriceInfo, NFTTagFilters, NFTCountdown, NFTDetailsInfo } from '@/features/nft'
+import { NFTUserInfo, NFTFilters, NFTGridList, NFTPriceInfo, NFTTagFilters, NFTCountdown, NFTDetailsInfo, NFTPlaceBid, NFTBuyNow } from '@/features/nft'
 import { Button, Heading, Label, Paragraph, Section, SectionHeader } from '@/shared/ui'
 import { Skeleton } from '@nextui-org/skeleton'
 import { Tab, Tabs } from '@nextui-org/tabs'
@@ -80,6 +80,12 @@ export const NFTItemDetails: FC<Props> = (props) => {
             avatar={data.owner.avatar}
             name={data.owner.username}
           />
+        </div>
+
+        {/* Actions */}
+        <div className='flex mt-8 gap-8'>
+          <NFTPlaceBid loaded={loaded} />
+          <NFTBuyNow loaded={loaded} />
         </div>
         
         <Tabs 

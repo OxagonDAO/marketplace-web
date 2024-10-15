@@ -1,9 +1,14 @@
-import React from 'react'
+import clsx from 'clsx'
+import React, { FC } from 'react'
 
-export const Logo = () => {
+type Props = {
+  type?: "white" | "dark"
+}
+
+export const Logo: FC<Props> = ({ type = "dark"}) => {
   return (
     <div>
-      <strong className='text-lg'>MARKETPLACE</strong>
+      <strong className={clsx('text-lg', type === "dark" ? "text-black-out" : "text-white")}>PumpMint</strong>
     </div>
   )
 }

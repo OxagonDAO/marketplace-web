@@ -9,7 +9,7 @@ export const Branch: FC = () => {
   
   return (
     <section className="max-w-sm">
-      <Logo />
+      <Logo type="white" />
       <Paragraph className="text-black-out-60">
         {t("description")}
       </Paragraph>

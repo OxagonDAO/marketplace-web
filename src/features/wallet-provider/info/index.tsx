@@ -1,4 +1,4 @@
-import { useWallet } from "@/features/wallet/model";
+import { useWallet } from "@/features/wallet";
 
 
 export const WalletInfo = () => {

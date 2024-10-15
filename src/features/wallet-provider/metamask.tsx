@@ -2,7 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { WalletProviderCard } from './card'
 import { useRouter } from 'next/navigation'
-import { useWallet } from '../wallet/model'
+import { useWallet } from '../wallet'
 
 export const Metamask = () => {
   const { t } = useTranslation("connect-wallet")

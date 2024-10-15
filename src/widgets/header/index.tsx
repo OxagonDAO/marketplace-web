@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { NavLinks } from './nav-links';
 import { TbSearch } from "react-icons/tb";
 import { WalletInfo } from '@/features/wallet-provider';
-import { useWallet } from '@/features/wallet/model';
+import { useWallet } from '@/features/wallet';
 
 export const Header: React.FC = () => {
   const { t } = useTranslation("common", { keyPrefix: "header"})

@@ -1,6 +1,9 @@
+"use client"
+
 import { walletModel } from "@/entities/wallet";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { RootState } from "@/redux/types";
+import { signIn } from "next-auth/react";
 
 
 export function useWallet() {
@@ -12,6 +15,10 @@ export function useWallet() {
     if (typeof ethereum !== 'undefined') {
       try {
         const accounts = await ethereum.request({ method: 'eth_requestAccounts' }) as string[];
+        signIn("credentials", {
+          address: accounts[0],
+          chain: "metamask"
+        })
         dispatch(walletModel.connectWallet({ address: accounts[0], provider: "metamask" }));
       } catch (err) {
         console.error('Error connecting to MetaMask', err);
