@@ -10,7 +10,7 @@ export const NFTSlider = () => {
   return (
     <div 
       className={clsx(
-        'relative flex gap-6 overflow-hidden shrink-0 h-[792px]',
+        'relative hidden lg:flex gap-6 overflow-hidden shrink-0 h-[792px]',
         'after:block after:absolute after:w-full after:h-[175px] after:bg-gradient-to-b after:from-white after:to-transparent after:top-0 after:left-0',
         'before:z-10 before:block before:absolute before:w-full before:h-[175px] before:bg-gradient-to-t before:from-white before:to-transparent before:bottom-0 before:left-0',
       )}>

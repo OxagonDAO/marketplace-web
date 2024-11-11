@@ -1,7 +1,7 @@
 "use client"
 
 import { nftMock } from '@/entities/nft'
-import { NFTPreview } from '@/entities/nft/api/types'
+import { NFT, NFTPreview } from '@/entities/nft/api/types'
 import { NFTCard } from '@/entities/nft/ui/card'
 import { Paragraph } from '@/shared/ui'
 import clsx from 'clsx'
@@ -12,13 +12,13 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 
 
 type Props = {
-  nfts?: NFTPreview[]
+  nfts?: NFT[]
   loading?: boolean,
-  onNFTClick?: (data: NFTPreview) => void,
+  onNFTClick?: (data: NFT) => void,
   className?: string,
 }
 
-const _mockNfts = new Array<NFTPreview>(8).fill(nftMock._nftPreview)
+const _mockNfts = new Array<NFT>(8).fill(nftMock._nft)
 
 export const NFTCarousel: FC<Props> = (props) => {
   const { 
@@ -57,7 +57,7 @@ export const NFTCarousel: FC<Props> = (props) => {
       items={list?.map((nft, i) => (
         <NFTCard
           className='bg-white'
-          key={loading ? i : nft.id}
+          key={loading ? i : nft.contract_address}
           data={nft}
           onClick={onNFTClick ? () => onNFTClick(nft) : undefined}
           loading={loading}

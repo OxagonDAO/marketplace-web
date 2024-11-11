@@ -1,17 +1,17 @@
 import { backendApi } from "@/shared/api";
-import { NFTDetailsRes, NFTExplorerRes } from "./types";
+import { NFT, NFTDetailsRes, NFTExplorerRes } from "./types";
 
 const actions = backendApi.injectEndpoints({
   endpoints: (builder) => ({
-    explorerNFTS: builder.query<NFTExplorerRes, void>({
+    explorerNFTS: builder.query<NFT[], void>({
       query: () => ({
-        url: "/nfts/explorer",
+        url: "/explore",
         method: "GET"
       })
     }),
-    getNFTDetailsById: builder.query<NFTDetailsRes, string>({
-      query: (id) => ({
-        url: `/nfts/item/${id}`,
+    getNFTDetailsById: builder.query<NFT, { address: string, tokenId: string }>({
+      query: ({ address, tokenId}) => ({
+        url: `/explore/nft/${address}/${tokenId}`,
         method: "GET"
       })
     }),

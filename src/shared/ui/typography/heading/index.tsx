@@ -10,10 +10,10 @@ type Props<T extends ElementType> = {
 } & ComponentPropsWithoutRef<T>;
 
 const sizeClasses = {
-  "1": 'text-[5rem] leading-[100%]',  // 80px/100%
-  "2": 'text-[3rem] leading-[auto]',  // 48px/Auto
+  "1": 'text-[3.5rem] sm:text-[4rem] md:text-[4.5rem] lg:text-[5rem] leading-[100%]',  // 80px/100%
+  "2": 'text-[2rem] lg:text-[3rem] leading-[auto]',  // 48px/Auto
   "3": 'text-[2rem] leading-[auto]',  // 32px/Auto
-  "4": 'text-[1.5rem] leading-[auto]',  // 24px/Auto
+  "4": 'text-[1rem] sm:text-[1.5rem] leading-[auto]',  // 24px/Auto
   "5": 'text-[1.25rem] leading-[auto]', // 20px/Auto
   "6": 'text-[1.125rem] leading-[auto]' // 18px/Auto
 } as const;

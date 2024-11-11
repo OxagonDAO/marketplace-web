@@ -45,8 +45,30 @@
     },
     "label": {
       "creator": "Creator",
-      "currentBid": "Current bid",
+      "current-bid": "Current bid",
       "sign-in": "Sign in",
-      "sign-up": "Sign up"
+      "sign-up": "Sign up",
+      "profile": "Profile",
+      "orders": "Orders",
+      "logout": "Logout",
+      "balance": "Balance",
+      "description": "Description",
+      "information": "Information",
+      "info": "Info",
+      "history": "History",
+      "price": "Price",
+      "current-price": "Current price",
+      "owner": "Owner",
+      "countdown": "Countdown",
+      "address": "Address",
+      "token-id": "Token ID",
+      "chain": "Chain",
+      "file": "File",
+      "name": "Name",
+      "symbol": "Symbol",
+      "logo": "Logo",
+      "select-or-drag-file": "Select file",
+      "supply": "Supply",
+      "collection": "Collection"
     }
 }

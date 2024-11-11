@@ -4,15 +4,14 @@ import { Button, Input, Select } from "@/shared/ui";
 import { Textarea } from "@nextui-org/input";
 import { SelectItem } from "@nextui-org/select";
 import { TbPlus } from "react-icons/tb";
-/* import { useAddress, useSDK } from "@thirdweb-dev/react"; */
 import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form"
+import { useFormContext } from "react-hook-form"
 import { localApi } from "@/shared/api";
-import { useWallet } from "@/features/wallet";
-import { getNfts } from "@/shared/utils";
-import { useSession } from "next-auth/react";
-import { useEvmWalletNFTs } from "@moralisweb3/next";
-import { EvmChain } from "moralis/common-evm-utils";
+
+import { useWeb3React } from "@web3-react/core";
+import { useTranslation } from "react-i18next";
+import Web3 from "web3";
+
 
 type Form = {
   file: FileList,
@@ -21,14 +20,14 @@ type Form = {
   supply: string,
 }
 
-
 export const NFTCreateForm: React.FC = () => {
   /* const sdk = useSDK()
   const address = useAddress() */
-  const { register, handleSubmit, formState: { errors } } = useForm<Form>()
+  const { register, handleSubmit, formState: { errors } } = useFormContext<Form>()
+  const { t } = useTranslation()
   const [collections, setCollections] = useState([])
   const [upload, uploadResult] = localApi.useUploadFilesMutation()
-  const { data } = useSession()
+  const { chainId, account, isActive, provider } = useWeb3React()
 
   useEffect(() => {
     /* moralis.EvmApi.nft.getWalletNFTs({
@@ -64,22 +63,24 @@ export const NFTCreateForm: React.FC = () => {
     if (sdk && address) getCollections()
   }, [sdk, address]) */
 
-  const onSubmit = handleSubmit((data) => {
+  const onSubmit = handleSubmit(async (data) => {
     const form = new FormData()
     form.append("file", data.file[0] )
     form.append("name", data.name)
     form.append("description", data.description)
     form.append("supply", data.supply)
-    upload(form)
+    
+    
   })
 
 
   return (
     <form className="space-y-4 max-w-96" onSubmit={onSubmit}>
         <div>
-          <label htmlFor="title" className="text-sm font-semibold">File upload</label>
+          <label htmlFor="title" className="text-sm font-semibold">{t("label.file")}</label>
           <Input 
             type="file" 
+            
             placeholder="Item name" 
             classNames={{
               inputWrapper: "!border-dotted !bg-black-out-100/10"
@@ -88,7 +89,7 @@ export const NFTCreateForm: React.FC = () => {
           />
         </div>
         <div>
-          <label htmlFor="title" className="text-sm font-semibold ">Name</label>
+          <label htmlFor="title" className="text-sm font-semibold ">{t("label.name")}</label>
           <Input 
             type="text" 
             placeholder="Item name"
@@ -96,7 +97,7 @@ export const NFTCreateForm: React.FC = () => {
           />
         </div>
         <div>
-          <label htmlFor="startDate" className="text-sm font-semibold">Supply</label>
+          <label htmlFor="startDate" className="text-sm font-semibold">{t("label.supply")}</label>
           <Input 
             type="number" 
             {...register("supply")}
@@ -105,7 +106,7 @@ export const NFTCreateForm: React.FC = () => {
       
 
       <div>
-        <label htmlFor="description" className="text-sm font-semibold">Description</label>
+        <label htmlFor="description" className="text-sm font-semibold">{t("label.description")}</label>
         <Textarea 
           variant="bordered" 
           type="date" 
@@ -132,9 +133,9 @@ export const NFTCreateForm: React.FC = () => {
       </div> */}
 
       <div>
-        <label htmlFor="collection" className="text-sm font-semibold">Choose Collection</label>
+        <label htmlFor="collection" className="text-sm font-semibold">{t("label.collection")}</label>
         <Select>
-          <SelectItem key={1}> 
+          <SelectItem key={1} href="/nft/new-collection"> 
             <div className="flex items-center">
               <div className="p-2 bg-black-out-10 rounded-md mr-2">
                 <TbPlus className="text-base" />

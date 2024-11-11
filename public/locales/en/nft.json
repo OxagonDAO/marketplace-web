@@ -1,4 +1,9 @@
 {
+  "explorer": {
+    "paragraph": {
+      "empty-list": "NFTs not founds"
+    }
+  },
   "create": {
     "title": "Create your item",
     "description": "Rankings by sales volume",
@@ -42,5 +47,12 @@
   "details": {
     "buyNow": "Buy now",
     "placeBid": "Place a bid"
+  },
+  "deploy-collection": {
+    "title": {
+      "main": "Create a collection",
+      "deploying": "Deploying your collection"
+    },
+    "description"  : "You’ll need to deploy an ERC-1155 contract on the blockchain to create a collection for your NFT."
   }
 }

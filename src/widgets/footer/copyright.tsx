@@ -8,7 +8,7 @@ export const Copyright: React.FC = () => {
   const { t } = useTranslation("common", { keyPrefix: "footer.legal"})
 
   return (
-    <div className="flex items-center gap-16">
+    <div className="flex flex-col lg:flex-row items-center gap-16">
       <Paragraph className="text-white !font-normal max-w-md">
         {t("description")}
       </Paragraph>

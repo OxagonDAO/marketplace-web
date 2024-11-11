@@ -3,7 +3,7 @@ import { buildInjectedConnector } from "./injected";
 import { ConnectionType } from "../types";
 
 export const CONNECTORS = {
-  [ConnectionType.INJECTED]: buildInjectedConnector()
+  [ConnectionType.INJECTED]: buildInjectedConnector(),
 }
 
 function getIsBraveWallet(): boolean {
@@ -26,10 +26,10 @@ export function getConnection(c: Connector | ConnectionType) {
       case ConnectionType.INJECTED:
         return CONNECTORS[ConnectionType.INJECTED]
       /* case ConnectionType.COINBASE_WALLET:
-        return CONNECTORS[ConnectionType.COINBASE_WALLET]
-      case ConnectionType.WALLET_CONNECT:
-        return CONNECTORS[ConnectionType.WALLET_CONNECT]
-      case ConnectionType.GNOSIS_SAFE:
+        return CONNECTORS[ConnectionType.COINBASE_WALLET]*/
+      /* case ConnectionType.WALLET_CONNECT:
+        return CONNECTORS[ConnectionType.WALLET_CONNECT] */
+      /* case ConnectionType.GNOSIS_SAFE:
         return CONNECTORS[ConnectionType.GNOSIS_SAFE]
       case ConnectionType.NETWORK:
         return CONNECTORS[ConnectionType.NETWORK] */
@@ -65,10 +65,12 @@ export function getConnection(c: Connector | ConnectionType) {
 export const tryActivateConnector = async (connector: Connector): Promise<ConnectionType | undefined> => {
   await connector.activate()
   const connectionType = getConnection(connector).type
+  localStorage.setItem("connector", connectionType)
   return connectionType
 }
 
 export const tryDeactivateConnector = async (connector: Connector): Promise<null | undefined> => {
+  localStorage.removeItem("connector")
   connector.deactivate?.()
   connector.resetState()
   return null

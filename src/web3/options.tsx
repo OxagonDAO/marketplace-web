@@ -46,6 +46,21 @@ export const ConnectionOptions = ({
         <button>Install Metamask</button>
       </a>
     )
+    const walletConnectOption = (
+      <Option
+        color="#FFE2C7" 
+        name="Wallet Connect"
+        description={t(`wallet-connect.description`)}
+        width={54}
+        height={54}
+        logo="/icons/metamask.svg"
+        isEnabled={isNoOptionActive || activeConnectionType === ConnectionType.WALLET_CONNECT}
+        isConnected={activeConnectionType === ConnectionType.WALLET_CONNECT}
+        connectionType={ConnectionType.WALLET_CONNECT}
+        onActivate={onActivate}
+        onDeactivate={onDeactivate}
+      />
+    ) 
 
     /* const coinbaseWalletOption = (
       <Option
@@ -70,6 +85,7 @@ export const ConnectionOptions = ({
     return (
       <>
         {metaMaskOption}
+        {/* {walletConnectOption} */}
        {/*  {coinbaseWalletOption}
         {walletConnectOption} */}
       </>

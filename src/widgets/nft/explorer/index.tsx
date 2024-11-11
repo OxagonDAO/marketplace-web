@@ -1,7 +1,7 @@
 "use client"
 
 import { nftApi } from '@/entities/nft'
-import { NFTPreview } from '@/entities/nft/api/types'
+import { NFT } from '@/entities/nft/api/types'
 import { NFTGridList, NFTTagFilters } from '@/features/nft'
 import { Section, SectionHeader } from '@/shared/ui'
 import { useRouter } from 'next/navigation'
@@ -14,8 +14,8 @@ export const NFTExplorer = () => {
   const router = useRouter()
   const { t } = useTranslation()
 
-  const handleNFTClick= (nft: NFTPreview) => {
-    router.push(`/marketplace/item/${nft.id}`)
+  const handleNFTClick= (nft: NFT) => {
+    router.push(`/marketplace/${nft.contract_address}/${nft.token_id}`)
   }
 
   return (
@@ -24,13 +24,13 @@ export const NFTExplorer = () => {
         title={t("exploreNftArt.title", { ns: "home"})}
         description={t("exploreNftArt.description", { ns: "home"})}
       />
-      <NFTTagFilters tags={data?.tags} loading={isFetching} />
       <NFTGridList 
-        nfts={data?.list} 
+        nfts={data} 
         loading={isFetching}
-        className="grid-cols-1 lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-4"
+        className="grid-cols-1 lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-4 mt-8"
         onNFTClick={handleNFTClick} 
       />
+      {/* <NFTTagFilters tags={data?.tags} loading={isFetching} /> */}
     </Section>
   )
 }

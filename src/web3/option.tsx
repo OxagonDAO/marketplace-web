@@ -46,7 +46,6 @@ export const Option: FC<Props> = (props) => {
     }
 
     const activation = await tryActivateConnector(getConnection(connectionType).connector)
-    console.log(activation, "activation")
     if (!activation) {
       return
     }

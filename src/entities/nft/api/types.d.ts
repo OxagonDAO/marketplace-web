@@ -29,13 +29,13 @@ export type NFTDetails = {
   tokenId: string
 } & NFTPreview
 
-export type NFT = {
+export type NFT12 = {
   contract: {
-    address: string,
-    tokenId: string,
-    token: string,
-    chain: string,
-    updatedDate: string,
+    address: string, // 0x5065996eB83290c80f60cEb9FC1dab55e050581D
+    tokenId: string, // 1
+    standard: string, // erc-1155
+    chain: string, // Polygon
+    updatedDate: string, 
     endDate: string,
     creatorFee: string
   },
@@ -55,3 +55,43 @@ export type NFTExplorerRes = {
 }
 
 export type NFTDetailsRes = NFTDetails
+
+export type NFT = {
+  contract_address: string,
+  contract_name: string,
+  token_id: string,
+  name: string,
+  description: string,
+  minter: {
+    avatar: string | null,
+    username: string | null,
+    address: string,
+  },
+  owner: {
+    avatar?: string | null,
+    username?: string | null,
+    address: string,
+  }
+  image?: string,
+  attributes: {
+    attribute_name: string,
+    attribute_value: string,
+    percentage: string,
+  }[],
+  metadata_url: string | null, //
+  current_bid: {
+    price: number | null,
+    asset_id: string | null,
+    symbol: string | null,
+    rate: number,
+  },
+  end_date: null,
+  method: string,
+  category: string,
+  views: number,
+  likes: number,
+  price: number,
+  currency: string | null,
+  status: string,
+  created_at: string
+}

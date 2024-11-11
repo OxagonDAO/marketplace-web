@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
     <footer className="bg-black-out w-full pt-24 pb-8 ">
       <div className='container mx-auto'>
         <Community />
-        <div className='flex justify-between mt-12'>
+        <div className='flex flex-col lg:flex-row justify-between mt-12'>
           <Branch />
           <Links />
         </div>

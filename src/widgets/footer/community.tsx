@@ -7,7 +7,7 @@ export const Community: React.FC = () => {
   const { t } = useTranslation("common", { keyPrefix: "footer.community"})
 
   return (
-    <section className="flex items-center justify-between">
+    <section className="flex flex-col lg:flex-row items-center justify-between">
       <Heading as="h3" level="3" className="text-like-and-kiss">{t("title")}</Heading>
       <Paragraph className="text-black-out-60 !font-normal max-w-md">
         {t("description")}

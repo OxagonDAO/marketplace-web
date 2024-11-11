@@ -1,6 +1,6 @@
 "use client"
 
-import { NFTExplorer } from "@/widgets/nft";
+import { NFTCreatedList, NFTExplorer } from "@/widgets/nft";
 import { Button, Section, SectionHeader, Heading, Paragraph } from "@/shared/ui";
 import { NFTSlider } from "./nfts-slider";
 import { IoWallet, IoAlbums, IoBookmark,IoImage } from "react-icons/io5";
@@ -31,7 +31,7 @@ const Page = () => {
       <section className="container mx-auto flex justify-between px-4 h-[792px]">
 
         {/* Title */}
-        <div className="flex flex-col w-1/2 mt-auto mb-[140px]">
+        <div className="flex flex-col w-full lg:w-1/2 mt-auto mb-[140px]">
           <Heading as="h1" level="1" className="" >
             {/* <Trans t={t} i18nKey="hero.title" components={{ colored: <span className="text-red-500" /> }} /> */}
             {t("hero.title")}
@@ -104,7 +104,7 @@ const Page = () => {
           title={t("createAndSellGuide.title")}
           description={t("createAndSellGuide.description")}
         />
-          <div className="flex justify-between gap-8 mt-16">
+          <div className="flex flex-col lg:flex-row justify-between gap-8 mt-16">
             {createAndSellSteps.map(({ icon: Icon, intKey }, i) => (
               <article key={i} className="flex gap-6 flex-col">
                 <div className="p-6 bg-blue/10 rounded-full w-max h-max">

@@ -42,5 +42,20 @@
   "details": {
     "buyNow": "Buy now",
     "placeBid": "Place a bid"
+  },
+  "place-bid": {
+    "title": "Place a bid",
+    "description": "You are about to place a bid for {{name}} by {{owner}}",
+    "input": {
+      "label": "Your bid",
+      "description": "Must be list at {{amount}} {{symbol}}"
+    },
+    "label": {
+      "bidding": "Your bidding balance",
+      "balance": "Your balance",
+      "fee": "Service fee",
+      "total": "Total bid amount"
+    },
+    "button": "Place a bid"
   }
 }

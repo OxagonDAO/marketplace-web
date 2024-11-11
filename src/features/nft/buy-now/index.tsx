@@ -2,7 +2,6 @@ import { Button, Label, Modal, Paragraph } from "@/shared/ui";
 import { Skeleton } from "@nextui-org/skeleton";
 import { FC, ReactNode } from "react";
 import { useTranslation } from "react-i18next";
-import { useTimer } from "react-timer-hook";
 
 type Props = {
   loaded: boolean,
@@ -13,7 +12,7 @@ export const NFTBuyNow: FC<Props> = (props) => {
   const { loaded } = props
 
   return (
-    <>
+    <div className="overflow-hidden">
       <Skeleton isLoaded={loaded} className="rounded-md w-max">
         <Button size='lg' variant="secondary" href="#" /* variant="flat" */>
           {t("buyNow")}
@@ -22,6 +21,6 @@ export const NFTBuyNow: FC<Props> = (props) => {
       {/* <Modal >
 
       </Modal> */}
-    </>
+    </div>
   );
 };

@@ -17,24 +17,31 @@ const _Collection = {
 export async function POST(request: NextRequest) {
   try {
     const data = await request.formData();
+    const type: string | null = data.get("type") as unknown as string
+    if(!type) return NextResponse.json({
+      error: "Not type provided"
+    }, { status: 400 })
+
     const name: string | null = data.get("name") as unknown as string
+    const image: File | null = data.get("image") as unknown as File;
+    const symbol: string | null = data.get("symbol") as unknown as string
     const description: string | null = data.get("description") as unknown as string
-    const supply: number | null = data.get("supply") as unknown as number
-    const file: File | null = data.get("file") as unknown as File;
+    
+    if(!name || !image || (!symbol && type === "collection")) return NextResponse.json({
+      error: "Empty fields"
+    }, { status: 400 })
 
-    if(!name || !description || !supply || !file) {
-      return NextResponse.json({
-        error: "Empty fields"
-      }, {
-        status: 400
-      })
-    }
+    const dataToUpload: Record<string, any> = { name }
 
-    const uploadData = await pinata.upload.file(file)
-    const url = await pinata.gateways.convert(uploadData.IpfsHash)
-    const uploadedJSON = await pinata.upload.json({ name, description, supply, image: url })
-    console.log(url, uploadData, uploadedJSON)
-    return NextResponse.json(url, { status: 200 });
+    // Upload image to IPFS, and after set to upload in JSON
+    const uploadImage = await pinata.upload.file(image)
+    dataToUpload.image = `ipfs://${uploadImage.IpfsHash}`
+
+    if(symbol) dataToUpload.symbol = symbol
+
+    const uploadedJSON = await pinata.upload.json(dataToUpload)
+
+    return NextResponse.json(`ipfs://${uploadedJSON.IpfsHash}`, { status: 200 });
   } catch (e) {
     console.log(e, "Catch error");
     return NextResponse.json(

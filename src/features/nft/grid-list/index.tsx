@@ -1,5 +1,5 @@
 import { nftMock } from '@/entities/nft'
-import { NFTPreview } from '@/entities/nft/api/types'
+import { NFT } from '@/entities/nft/api/types'
 import { NFTCard } from '@/entities/nft/ui/card'
 import { Paragraph } from '@/shared/ui'
 import clsx from 'clsx'
@@ -7,13 +7,13 @@ import React, { FC, MouseEventHandler } from 'react'
 import { useTranslation } from 'react-i18next'
 
 type Props = {
-  nfts?: NFTPreview[]
+  nfts?: NFT[]
   loading?: boolean,
-  onNFTClick?: (data: NFTPreview) => void,
+  onNFTClick?: (data: NFT) => void,
   className?: string,
 }
 
-const _mockNfts = new Array<NFTPreview>(8).fill(nftMock._nftPreview)
+const _mockNfts = new Array<NFT>(8).fill(nftMock._nft)
 
 export const NFTGridList: FC<Props> = (props) => {
   const { 
@@ -30,13 +30,13 @@ export const NFTGridList: FC<Props> = (props) => {
     <div className={clsx("grid gap-8", className)}>
       {list?.map((nft, i) => (
         <NFTCard
-          key={loading ? i : nft.id}
+          key={loading ? i : nft.contract_address}
           data={nft}
           onClick={onNFTClick ? () => onNFTClick(nft) : undefined}
           loading={loading}
         />
       )) || (
-        <Paragraph className='text-black-out-50'>{t("empty-list")}</Paragraph>
+        <Paragraph className='text-black-out-50'>{t("explorer.paragraph.empty-list")}</Paragraph>
       )}
     </div>
   )
