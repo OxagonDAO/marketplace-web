@@ -30,7 +30,7 @@ export const NFTGridList: FC<Props> = (props) => {
     <div className={clsx("grid gap-8", className)}>
       {list?.map((nft, i) => (
         <NFTCard
-          key={loading ? i : nft.contract_address}
+          key={loading ? i : nft.contract_address + nft.token_id}
           data={nft}
           onClick={onNFTClick ? () => onNFTClick(nft) : undefined}
           loading={loading}
