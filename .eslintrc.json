@@ -9,7 +9,7 @@
     }
   },
   "rules": {
-   "import/order": "info",
+   "import/order": "1",
    "import/no-internal-modules": "info",
    "boundaries/element-types": "info"
 }
