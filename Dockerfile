@@ -6,7 +6,7 @@ WORKDIR /home/app
 
 COPY package.json /home/app
 
-RUN test -d /home/app/node_modules || npm i
+RUN test -d /home/app/node_modules || npm i --force
 
 EXPOSE 3000
 
